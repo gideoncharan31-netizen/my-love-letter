@@ -1,0 +1,1012 @@
+/* ================================= */
+/* BASIC RESET */
+/* ================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    color: white;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #100c16,
+            #21182c,
+            #142c2b,
+            #110c16
+        );
+
+}
+
+
+/* ================================= */
+/* AURORA */
+/* ================================= */
+
+.aurora {
+
+    position: fixed;
+
+    width: 120vw;
+
+    height: 80vh;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    opacity: 0.45;
+
+    pointer-events: none;
+
+    z-index: -2;
+
+}
+
+
+.aurora-one {
+
+    top: -30vh;
+
+    left: -20vw;
+
+    background:
+
+        radial-gradient(
+            ellipse,
+            #3de0b0,
+            transparent 65%
+        );
+
+    animation:
+
+        auroraMove 12s
+        ease-in-out
+        infinite alternate;
+
+}
+
+
+.aurora-two {
+
+    bottom: -30vh;
+
+    right: -20vw;
+
+    background:
+
+        radial-gradient(
+            ellipse,
+            #9a5de8,
+            transparent 65%
+        );
+
+    animation:
+
+        auroraMove2 15s
+        ease-in-out
+        infinite alternate;
+
+}
+
+
+@keyframes auroraMove {
+
+    from {
+
+        transform:
+            translateX(-10%)
+            rotate(-5deg);
+
+    }
+
+    to {
+
+        transform:
+            translateX(20%)
+            rotate(10deg);
+
+    }
+
+}
+
+
+@keyframes auroraMove2 {
+
+    from {
+
+        transform:
+            translateX(15%)
+            rotate(5deg);
+
+    }
+
+    to {
+
+        transform:
+            translateX(-20%)
+            rotate(-10deg);
+
+    }
+
+}
+
+
+/* ================================= */
+/* OPENING SCREEN */
+/* ================================= */
+
+.opening-screen {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    text-align: center;
+
+}
+
+
+.opening-content {
+
+    width: 100%;
+
+    max-width: 430px;
+
+}
+
+
+.top-text {
+
+    font-size: 17px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.8;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* ================================= */
+/* ENVELOPE */
+/* ================================= */
+
+.envelope-container {
+
+    perspective: 1000px;
+
+    margin-bottom: 40px;
+
+}
+
+
+.envelope {
+
+    position: relative;
+
+    width: 300px;
+
+    height: 190px;
+
+    margin: auto;
+
+    transform-style:
+        preserve-3d;
+
+    transition:
+        transform 1s ease;
+
+}
+
+
+/* LETTER INSIDE */
+
+.letter-preview {
+
+    position: absolute;
+
+    width: 240px;
+
+    height: 170px;
+
+    left: 30px;
+
+    top: 10px;
+
+    padding: 25px;
+
+    color: #4c3528;
+
+    background: #f7ead0;
+
+    z-index: 2;
+
+    transition:
+        transform 1s ease;
+
+}
+
+
+.letter-preview p {
+
+    font-family:
+        'Dancing Script';
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* ENVELOPE BODY */
+
+.envelope-front {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #8a5d47,
+            #5c3b2d
+        );
+
+    z-index: 4;
+
+    border-radius: 5px;
+
+    box-shadow:
+
+        0 25px 60px
+        rgba(0,0,0,0.5);
+
+}
+
+
+/* ENVELOPE FLAP */
+
+.envelope-flap {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: #704936;
+
+    clip-path:
+
+        polygon(
+            0 0,
+            50% 55%,
+            100% 0
+        );
+
+    transform-origin: top;
+
+    z-index: 5;
+
+    transition:
+
+        transform 1s
+        cubic-bezier(
+            0.68,
+            -0.55,
+            0.27,
+            1.55
+        );
+
+}
+
+
+/* HEART SEAL */
+
+.heart-seal {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    font-size: 45px;
+
+    z-index: 10;
+
+    filter:
+
+        drop-shadow(
+            0 5px 10px
+            rgba(0,0,0,0.3)
+        );
+
+}
+
+
+/* OPEN ENVELOPE */
+
+.envelope.open
+.envelope-flap {
+
+    transform:
+
+        rotateX(180deg);
+
+}
+
+
+.envelope.open
+.letter-preview {
+
+    transform:
+
+        translateY(-100px);
+
+}
+
+
+/* ================================= */
+/* TITLE */
+/* ================================= */
+
+h1 {
+
+    font-family:
+        'Dancing Script';
+
+    font-size: 45px;
+
+    line-height: 1.1;
+
+}
+
+
+h1 span {
+
+    color: #e9c7a5;
+
+}
+
+
+.subtitle {
+
+    margin-top: 15px;
+
+    font-size: 19px;
+
+    opacity: 0.75;
+
+}
+
+
+/* ================================= */
+/* HEART BUTTON */
+/* ================================= */
+
+.heart-button {
+
+    position: relative;
+
+    border: none;
+
+    background: transparent;
+
+    margin-top: 35px;
+
+    cursor: pointer;
+
+    color: white;
+
+}
+
+
+.heart-shape {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100px;
+
+    height: 100px;
+
+    margin: auto;
+
+    font-size: 45px;
+
+    background: #704936;
+
+    clip-path:
+
+        polygon(
+            50% 90%,
+            10% 50%,
+            5% 30%,
+            10% 15%,
+            25% 5%,
+            40% 10%,
+            50% 25%,
+            60% 10%,
+            75% 5%,
+            90% 15%,
+            95% 30%,
+            90% 50%
+        );
+
+    transition: 0.4s;
+
+}
+
+
+.heart-button:hover
+.heart-shape {
+
+    transform:
+        scale(1.12);
+
+}
+
+
+.button-text {
+
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 18px;
+
+}
+
+
+/* ================================= */
+/* LETTER PAGE */
+/* ================================= */
+
+.letter-page {
+
+    display: none;
+
+}
+
+
+.letter-page.show {
+
+    display: block;
+
+    animation:
+
+        fadeIn 2s ease;
+
+}
+
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* ================================= */
+/* INTRO */
+/* ================================= */
+
+.intro-section {
+
+    text-align: center;
+
+    padding:
+        80px
+        25px
+        60px;
+
+}
+
+
+.intro-section p {
+
+    font-size: 18px;
+
+    opacity: 0.8;
+
+}
+
+
+.intro-section h2 {
+
+    font-family:
+        'Dancing Script';
+
+    font-size: 48px;
+
+    margin-top: 15px;
+
+}
+
+
+/* ================================= */
+/* LOVE LETTER SECTION */
+/* ================================= */
+
+.love-letter-section {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: auto;
+
+    padding:
+        20px;
+
+}
+
+
+/* ================================= */
+/* LETTER */
+/* ================================= */
+
+.love-letter {
+
+    position: relative;
+
+    z-index: 3;
+
+    padding:
+        45px
+        28px;
+
+    color: #4b3528;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff7e7,
+            #ead7b9
+        );
+
+    box-shadow:
+
+        0 30px 70px
+        rgba(0,0,0,0.5);
+
+    border-radius: 5px;
+
+}
+
+
+.letter-top-decoration,
+.letter-bottom-decoration {
+
+    text-align: center;
+
+    color: #8a5d47;
+
+    font-size: 25px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.letter-text {
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+}
+
+
+.letter-text p {
+
+    margin-bottom: 22px;
+
+}
+
+
+.signature {
+
+    font-family:
+        'Dancing Script';
+
+    font-size: 30px;
+
+    margin-top: 35px;
+
+}
+
+
+/* ================================= */
+/* HANGING PHOTOS */
+/* ================================= */
+
+.hanging-photo {
+
+    position: relative;
+
+    width: 170px;
+
+    padding: 8px;
+
+    background: #fffaf0;
+
+    color: #4b3528;
+
+    box-shadow:
+
+        0 15px 35px
+        rgba(0,0,0,0.5);
+
+    z-index: 5;
+
+}
+
+
+.hanging-photo img {
+
+    width: 100%;
+
+    height: 160px;
+
+    object-fit: cover;
+
+}
+
+
+.hanging-photo p {
+
+    font-family:
+        'Dancing Script';
+
+    font-size: 17px;
+
+    text-align: center;
+
+    padding: 8px 3px;
+
+}
+
+
+/* STRING */
+
+.photo-string {
+
+    position: absolute;
+
+    width: 2px;
+
+    height: 75px;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            #d8c3a4,
+            #8b765f
+        );
+
+    left: 50%;
+
+    top: -75px;
+
+}
+
+
+/* PIN */
+
+.photo-pin {
+
+    position: absolute;
+
+    top: -10px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    color: #8a5d47;
+
+}
+
+
+/* LEFT PHOTO */
+
+.photo-left {
+
+    transform:
+        rotate(-7deg);
+
+    margin-bottom: -40px;
+
+}
+
+
+/* RIGHT PHOTO */
+
+.photo-right {
+
+    transform:
+        rotate(7deg);
+
+    margin-left: auto;
+
+    margin-top: -40px;
+
+}
+
+
+/* ================================= */
+/* PHOTOBOOTH */
+/* ================================= */
+
+.photobooth-section {
+
+    text-align: center;
+
+    padding:
+        120px
+        20px;
+
+}
+
+
+.photobooth-section h2 {
+
+    font-family:
+        'Dancing Script';
+
+    font-size: 45px;
+
+}
+
+
+.photobooth-section > p {
+
+    font-size: 20px;
+
+    margin:
+        10px
+        0
+        40px;
+
+}
+
+
+.photobooth {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+
+    max-width: 450px;
+
+    margin: auto;
+
+}
+
+
+.polaroid {
+
+    background: #fffaf0;
+
+    color: #4b3528;
+
+    padding:
+        8px
+        8px
+        15px;
+
+    box-shadow:
+
+        0 15px 30px
+        rgba(0,0,0,0.4);
+
+}
+
+
+.polaroid img {
+
+    width: 100%;
+
+    height: 150px;
+
+    object-fit: cover;
+
+}
+
+
+.polaroid span {
+
+    display: block;
+
+    font-family:
+        'Dancing Script';
+
+    font-size: 18px;
+
+    margin-top: 8px;
+
+}
+
+
+/* ================================= */
+/* FINAL */
+/* ================================= */
+
+.final-section {
+
+    text-align: center;
+
+    padding:
+        100px
+        25px;
+
+    max-width: 500px;
+
+    margin: auto;
+
+}
+
+
+.final-heart {
+
+    font-size: 65px;
+
+}
+
+
+.final-section h2 {
+
+    font-family:
+        'Dancing Script';
+
+    font-size: 50px;
+
+    margin:
+        20px
+        0;
+
+}
+
+
+.final-section p {
+
+    font-size: 21px;
+
+    line-height: 1.7;
+
+    margin: 15px;
+
+}
+
+
+.final-section h3 {
+
+    font-family:
+        'Dancing Script';
+
+    font-size: 30px;
+
+    margin-top: 30px;
+
+}
+
+
+.final-decoration {
+
+    margin-top: 30px;
+
+    font-size: 25px;
+
+}
+
+
+/* ================================= */
+/* DESKTOP */
+/* ================================= */
+
+@media
+(min-width: 800px) {
+
+
+    .love-letter-section {
+
+        max-width: 650px;
+
+    }
+
+
+    .hanging-photo {
+
+        position: absolute;
+
+    }
+
+
+    .photo-left {
+
+        left: -150px;
+
+        top: 120px;
+
+    }
+
+
+    .photo-right {
+
+        right: -150px;
+
+        top: 450px;
+
+    }
+
+
+}
